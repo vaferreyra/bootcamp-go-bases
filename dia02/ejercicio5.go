@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 )
 
 const (
@@ -12,23 +11,23 @@ const (
 	Spider  = "tarantula"
 )
 
-func main() {
-	// Cuantos kg de alimento necesito para alimentar 10 perros y 10 gatos?
-	var amount float64
+// func main() {
+// 	// Cuantos kg de alimento necesito para alimentar 10 perros y 10 gatos?
+// 	var amount float64
 
-	animalDog, err1 := animal(Dog)
-	animalCat, err2 := animal(Cat)
+// 	animalDog, err1 := animal(Dog)
+// 	animalCat, err2 := animal(Cat)
 
-	if err1 != nil || err2 != nil {
-		fmt.Println("Animal inválido")
-		return
-	}
+// 	if err1 != nil || err2 != nil {
+// 		fmt.Println("Animal inválido")
+// 		return
+// 	}
 
-	amount += animalDog(10)
-	amount += animalCat(10)
+// 	amount += animalDog(10)
+// 	amount += animalCat(10)
 
-	fmt.Printf("Se necesitan %v kg de alimento para alimentar los animales \n", amount)
-}
+// 	fmt.Printf("Se necesitan %v kg de alimento para alimentar los animales \n", amount)
+// }
 
 func animal(animal string) (funcion func(int) float64, err error) {
 	switch animal {

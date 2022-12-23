@@ -2,17 +2,16 @@ package main
 
 import (
 	"errors"
-	"fmt"
 )
 
-func main() {
-	result, err := promedioNotas(4, 5, 2, 10, 10, 9, 0)
-	if err == nil {
-		fmt.Println("El promedio de las notas es de:", result)
-	} else {
-		fmt.Println(err)
-	}
-}
+// func main() {
+// 	result, err := promedioNotas(4, 5, 2, 10, 10, 9, 0)
+// 	if err == nil {
+// 		fmt.Println("El promedio de las notas es de:", result)
+// 	} else {
+// 		fmt.Println(err)
+// 	}
+// }
 
 func promedioNotas(notas ...int) (int, error) {
 	var totalNota int

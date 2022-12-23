@@ -4,10 +4,9 @@ import (
 	"fmt"
 )
 
-func main() {
-	calcularSalario(2, "A")
-
-}
+// func main() {
+// 	calcularSalario(2, "A")
+// }
 
 func calcularSalario(horasTrabajadas int, categoria string) {
 	var calculo int

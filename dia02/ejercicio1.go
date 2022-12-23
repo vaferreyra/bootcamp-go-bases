@@ -2,9 +2,9 @@ package main
 
 import "fmt"
 
-func main() {
-	calcularImpuesto()
-}
+// func main() {
+// 	calcularImpuesto()
+// }
 
 func calcularImpuesto() {
 	var salario float64

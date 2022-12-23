@@ -13,15 +13,15 @@ const (
 
 type Operacion func(...int) int
 
-func main() {
-	calcularEstadistica(average, 1, 2, 3, 4, 5)
-	calcularEstadistica(minimum, 1, 2, 3, 4, 5)
-	calcularEstadistica(maximum, 1, 2, 3, 4, 5)
-	calcularEstadistica("asdadsasd", 1, 2)
-	calcularEstadistica(minimum)
-	calcularEstadistica(maximum)
-	calcularEstadistica(average)
-}
+// func main() {
+// 	calcularEstadistica(average, 1, 2, 3, 4, 5)
+// 	calcularEstadistica(minimum, 1, 2, 3, 4, 5)
+// 	calcularEstadistica(maximum, 1, 2, 3, 4, 5)
+// 	calcularEstadistica("asdadsasd", 1, 2)
+// 	calcularEstadistica(minimum)
+// 	calcularEstadistica(maximum)
+// 	calcularEstadistica(average)
+// }
 
 func calcularEstadistica(calculo string, notas ...int) {
 	function, err := handlerCalculo(calculo)
