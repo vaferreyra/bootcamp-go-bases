@@ -1,27 +1,25 @@
 package main
 
-import "fmt"
-
 // func main() {
 // 	calcularImpuesto()
 // }
 
-func calcularImpuesto() {
-	var salario float64
-	fmt.Scan(&salario)
+func calcularImpuesto(salario float64) (montoTotal float64, ok bool) {
 
 	if salario < 0 {
-		fmt.Println("El monto ingresado no es válido")
 		return
 	}
 
+	ok = !ok
+
 	if salario > 150000 {
-		fmt.Println("Tu impuesto es del 27%, y el total de tu impuesto es de:", obtenerPorcentaje(salario, 27))
+		montoTotal = obtenerPorcentaje(salario, 27)
 	} else if salario > 50000 {
-		fmt.Println("Tu impuesto es del 17%, y el total de tu impuesto es de:", obtenerPorcentaje(salario, 17))
+		montoTotal = obtenerPorcentaje(salario, 17)
 	} else {
-		fmt.Println("No te corresponden impuestos")
+		montoTotal = salario
 	}
+	return
 }
 
 func obtenerPorcentaje(salario, porcentaje float64) float64 {
