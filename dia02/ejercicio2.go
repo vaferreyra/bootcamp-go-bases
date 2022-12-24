@@ -1,9 +1,5 @@
 package main
 
-import (
-	"errors"
-)
-
 // func main() {
 // 	result, err := promedioNotas(4, 5, 2, 10, 10, 9, 0)
 // 	if err == nil {
@@ -13,13 +9,21 @@ import (
 // 	}
 // }
 
-func promedioNotas(notas ...int) (int, error) {
-	var totalNota int
+func promedioNotas(notas ...int) (promedio int, status bool) {
+	if len(notas) == 0 {
+		status = !status
+		return
+	}
+
 	for _, nota := range notas {
 		if nota <= 0 {
-			return 0, errors.New("Hay notas inválidas")
+			promedio = 0
+			return
 		}
-		totalNota += nota
+		promedio += nota
 	}
-	return totalNota / len(notas), nil
+
+	status = !status
+	promedio = promedio / len(notas)
+	return
 }
