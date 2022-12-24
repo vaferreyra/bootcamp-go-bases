@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 )
 
 const (
@@ -15,71 +14,92 @@ type Operacion func(...int) int
 
 // func main() {
 // 	calcularEstadistica(average, 1, 2, 3, 4, 5)
-// 	calcularEstadistica(minimum, 1, 2, 3, 4, 5)
-// 	calcularEstadistica(maximum, 1, 2, 3, 4, 5)
-// 	calcularEstadistica("asdadsasd", 1, 2)
-// 	calcularEstadistica(minimum)
-// 	calcularEstadistica(maximum)
-// 	calcularEstadistica(average)
+// a, b := calcularEstadistica(minimum, 1, 2, 3, 4, 5, -10)
+// fmt.Println(a, b)
+// calcularEstadistica(maximum, 1, 2, 3, 4, 5)
+// calcularEstadistica("asdadsasd", 1, 2)
+// calcularEstadistica(minimum)
+// calcularEstadistica(maximum)
+// calcularEstadistica(average)
 // }
 
-func calcularEstadistica(calculo string, notas ...int) {
+func calcularEstadistica(calculo string, notas ...int) (nota int, status bool) {
 	function, err := handlerCalculo(calculo)
+	statusNotas := comprobarNotas(notas...)
 
-	if err != nil {
-		fmt.Println(err)
+	if err != nil || len(notas) == 0 || !statusNotas {
 		return
 	}
 
-	r := function(notas...)
-	fmt.Println("El resultado del calculo es:", r)
+	nota = function(notas...)
+	status = !status
+	return
 }
 
-func handlerCalculo(calculo string) (Operacion, error) {
+func handlerCalculo(calculo string) (operacion Operacion, err error) {
 	switch calculo {
 	case minimum:
-		return opMinimum, nil
+		operacion = opMinimum
 	case maximum:
-		return opMaximum, nil
+		operacion = opMaximum
 	case average:
-		return opAverage, nil
+		operacion = opAverage
 	default:
-		return nil, errors.New("El calculo es inválido")
+		err = errors.New("El calculo es inválido")
 	}
+	return
 }
 
-func opMaximum(numbers ...int) int {
-	var max int
+func opMaximum(numbers ...int) (max int) {
+	if len(numbers) == 0 {
+		return
+	}
+
+	max = numbers[0]
 
 	for _, number := range numbers {
 		if max < number {
 			max = number
 		}
 	}
-	return max
+
+	return
 }
 
-func opMinimum(numbers ...int) int {
-	var min int
+func opMinimum(numbers ...int) (min int) {
+	if len(numbers) == 0 {
+		return
+	}
 
+	min = numbers[0]
 	for _, number := range numbers {
 		if min > number {
 			min = number
 		}
 	}
-	return min
+
+	return
 }
 
-func opAverage(numbers ...int) int {
+func opAverage(numbers ...int) (avg int) {
 	if len(numbers) == 0 {
-		return 0
+		return
 	}
-
-	var sumaTotal int
 
 	for _, number := range numbers {
-		sumaTotal += number
+		avg += number
 	}
 
-	return sumaTotal / len(numbers)
+	avg = avg / len(numbers)
+	return
+}
+
+func comprobarNotas(numbers ...int) (status bool) {
+	for _, numero := range numbers {
+		if numero <= 0 {
+			return
+		}
+	}
+	status = !status
+	return
 }
