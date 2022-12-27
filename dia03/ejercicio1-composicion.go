@@ -40,32 +40,31 @@ func GetById(id int) (producto Product, err error) {
 	return Product{}, errors.New("There is not product with that id")
 }
 
-func main() {
-	product := Product{6, "Alimento para perro", 2300.0, "Dog chow", "Animales"}
+// func main() {
+// 	product := Product{6, "Alimento para perro", 2300.0, "Dog chow", "Animales"}
 
-	fmt.Println("----------- Productos iniciales -----------")
-	GetAllProducts()
+// 	fmt.Println("----------- Productos iniciales -----------")
+// 	GetAllProducts()
 
-	// Add new product
-	product.Save()
-	fmt.Println("----------- Agrego producto alimento -----------")
-	GetAllProducts()
+// 	// Add new product
+// 	product.Save()
+// 	fmt.Println("----------- Agrego producto alimento -----------")
+// 	GetAllProducts()
 
-	// Get by id
-	fmt.Println("----------- Get product by id -----------")
-	productById, err := GetById(3)
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(productById)
-	}
+// 	// Get by id
+// 	fmt.Println("----------- Get product by id -----------")
+// 	productById, err := GetById(3)
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	} else {
+// 		fmt.Println(productById)
+// 	}
 
-	fmt.Println("----------- Error in get product by id -----------")
-	productById2, err2 := GetById(100)
-	if err2 != nil {
-		fmt.Println(err2)
-	} else {
-		fmt.Println(productById2)
-	}
-
-}
+// 	fmt.Println("----------- Error in get product by id -----------")
+// 	productById2, err2 := GetById(100)
+// 	if err2 != nil {
+// 		fmt.Println(err2)
+// 	} else {
+// 		fmt.Println(productById2)
+// 	}
+// }

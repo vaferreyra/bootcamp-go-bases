@@ -18,10 +18,10 @@ func (a Alumno) String() string {
 	)
 }
 
-func main() {
-	var stringAlumno fmt.Stringer = Alumno{
-		"Valentin", "Ferreyra", 41924003, "19/12/2022",
-	}
+// func main() {
+// 	var stringAlumno fmt.Stringer = Alumno{
+// 		"Valentin", "Ferreyra", 41924003, "19/12/2022",
+// 	}
 
-	fmt.Println(stringAlumno)
-}
+// 	fmt.Println(stringAlumno)
+// }

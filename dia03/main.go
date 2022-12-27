@@ -43,45 +43,45 @@ func increment(value *int) {
 	*value++
 }
 
-func main() {
-	author := Author{
-		"John", "Doe",
-	}
+// func main() {
+// 	author := Author{
+// 		"John", "Doe",
+// 	}
 
-	var textDescriptionGenerator fmt.Stringer = Book{
-		Title:   "Lord of the Rings",
-		Content: "Lorem ipsum",
-		Author:  author,
-	}
+// 	var textDescriptionGenerator fmt.Stringer = Book{
+// 		Title:   "Lord of the Rings",
+// 		Content: "Lorem ipsum",
+// 		Author:  author,
+// 	}
 
-	fmt.Println(textDescriptionGenerator.String())
-	// number := 10
-	// fmt.Println(number)
+// 	fmt.Println(textDescriptionGenerator.String())
+// 	// number := 10
+// 	// fmt.Println(number)
 
-	// increment(&number)
+// 	// increment(&number)
 
-	// fmt.Println(number)
+// 	// fmt.Println(number)
 
-	// author := Author{
-	// 	"John", "Doe",
-	// }
+// 	// author := Author{
+// 	// 	"John", "Doe",
+// 	// }
 
-	// book := Book{
-	// 	Title:   "Lord of the Rings",
-	// 	Content: "Lorem ipsum",
-	// 	Author:  author,
-	// }
+// 	// book := Book{
+// 	// 	Title:   "Lord of the Rings",
+// 	// 	Content: "Lorem ipsum",
+// 	// 	Author:  author,
+// 	// }
 
-	// book.PrintInformation()
+// 	// book.PrintInformation()
 
-	// var persona Persona
+// 	// var persona Persona
 
-	// persona.Nombre = "Valentin"
-	// persona.Edad = 23
-	// persona.Residencia = Domicilio{Calle: "Brahms", Altura: 5732}
+// 	// persona.Nombre = "Valentin"
+// 	// persona.Edad = 23
+// 	// persona.Residencia = Domicilio{Calle: "Brahms", Altura: 5732}
 
-	// fmt.Println(persona.Edad)
-	// persona.cumplirAños()
-	// fmt.Println(persona.Edad)
+// 	// fmt.Println(persona.Edad)
+// 	// persona.cumplirAños()
+// 	// fmt.Println(persona.Edad)
 
-}
+// }
