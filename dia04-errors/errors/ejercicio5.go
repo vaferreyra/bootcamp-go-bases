@@ -10,7 +10,7 @@ var (
 	ErrCantidadDeHorasBaja     = fmt.Errorf("El mínimo de horas mensuales trabajadas debe ser mayor a 80")
 )
 
-func main() {
+func main5() {
 	salario, err := calcularSalarioMensual(10, -2)
 
 	if err != nil {
