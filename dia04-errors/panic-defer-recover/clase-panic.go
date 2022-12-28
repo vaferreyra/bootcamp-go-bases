@@ -10,7 +10,7 @@ func (d *Dog) WoofWoof() string {
 	return fmt.Sprintf("Woof %s Woof\n", d.Name)
 }
 
-func main() {
+func main1() {
 
 	perrito := &Dog{"Hernán"}
 
