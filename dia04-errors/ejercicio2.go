@@ -30,7 +30,7 @@ func consultarSalario(numero int) (result bool, err error) {
 	return
 }
 
-func main() {
+func main2() {
 	_, err := consultarSalario(5000)
 
 	if err != nil {
