@@ -30,13 +30,12 @@ func consultarSalario(numero int) (result bool, err error) {
 	return
 }
 
-func main2() {
+func main() {
 	_, err := consultarSalario(5000)
 
 	if err != nil {
-		fmt.Println(err.Error())
+		if errors.Is(err, &ErrLowSalary) {
+			fmt.Println(err)
+		}
 	}
-
-	fmt.Println(errors.Is(err, &ErrLowSalary))
-	fmt.Println(errors.Is(err, &ErrHighSalary))
 }

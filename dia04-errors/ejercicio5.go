@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func main5() {
 	salario, err := calcularSalarioMensual(10, 1000)
 
 	if err != nil {
