@@ -98,7 +98,7 @@ func existsClient(legajo int) (result bool) {
 // 	newClient.addToStorage()
 // }
 
-func main() {
+func main3() {
 	// invalidLegajoClient := Client{
 	// 	-2, "Almendra", 34252134, 152525324, "Bolivia 123",
 	// }

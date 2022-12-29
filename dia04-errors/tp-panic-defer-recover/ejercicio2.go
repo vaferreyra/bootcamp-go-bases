@@ -16,5 +16,5 @@ func main() {
 		panic("El archivo indicado no fue encontrado o está dañado")
 	}
 
-	fmt.Println(string(file))
+	fmt.Printf("%s\n", file)
 }
