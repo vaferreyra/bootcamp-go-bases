@@ -113,8 +113,7 @@ func main() {
 
 	defer func() {
 		fmt.Println("Ejecución finalizada")
-		err := recover()
-		if err != nil {
+		if err := recover(); err != nil {
 			fmt.Printf("Hubo un error en la ejecución. \nMensaje de error: %v\n", err)
 		}
 	}()
